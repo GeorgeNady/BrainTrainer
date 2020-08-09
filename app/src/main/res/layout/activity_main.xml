@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnStart"
+        style="@android:style/Widget.Holo.Button.Borderless"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="go"
+        android:text="@string/go"
+        android:textColor="@android:color/black"
+        android:textSize="60sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:background="@android:color/holo_blue_bright"
+        android:padding="16dp"
+        android:text="@string/_30s"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:background="@android:color/holo_orange_dark"
+        android:padding="16dp"
+        android:text="@string/_31_7"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/tvScore"
+        app:layout_constraintStart_toEndOf="@+id/tvTimer"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/holo_red_light"
+        android:padding="16dp"
+        android:text="@string/_0_0"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        app:columnCount="2"
+        app:layout_constraintBottom_toBottomOf="@+id/btnStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvQuestion"
+        app:layout_constraintVertical_bias="0.0"
+        app:rowCount="2">
+
+        <TextView
+            android:id="@+id/choose0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_green_light"
+            android:gravity="fill"
+            android:onClick="chooseAnswer"
+            android:paddingTop="40dp"
+            android:paddingBottom="40dp"
+            android:tag="0"
+            android:text="@string/choose1"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            app:layout_row="0"
+            app:layout_column="0"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/choose1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:background="@android:color/holo_orange_light"
+            android:gravity="fill"
+            android:onClick="chooseAnswer"
+            android:paddingTop="40dp"
+            android:paddingBottom="40dp"
+            android:tag="1"
+            app:layout_row="0"
+            app:layout_column="1"
+            android:text="@string/choose2"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/choose2"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:background="?attr/colorControlActivated"
+            android:gravity="fill"
+            android:onClick="chooseAnswer"
+            android:paddingTop="40dp"
+            android:paddingBottom="40dp"
+            android:tag="2"
+            app:layout_row="1"
+            app:layout_column="0"
+            android:text="@string/choose3"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/choose3"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:background="@android:color/holo_purple"
+            android:gravity="fill"
+            android:onClick="chooseAnswer"
+            android:paddingTop="40dp"
+            android:paddingBottom="40dp"
+            android:tag="3"
+            app:layout_row="1"
+            app:layout_column="1"
+            android:text="@string/choose4"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            tools:ignore="RtlCompat" />
+
+    </androidx.gridlayout.widget.GridLayout>
+
+    <TextView
+        android:id="@+id/tvResultMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:padding="16dp"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/gridLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
